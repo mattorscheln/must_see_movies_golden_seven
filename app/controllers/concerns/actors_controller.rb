@@ -13,41 +13,41 @@ class ActorsController < ApplicationController
   end
 
   def create_row
-    p = Director.new
-    p.name       = params["the_name"]
-    p.bio        = params["the_bio"]
-    p.dob        = params["the_dob"]
-    p.image_url  = params["the_image"]
-    p.save
+    a = Actor.new
+    a.name       = params["the_name"]
+    a.bio        = params["the_bio"]
+    a.dob        = params["the_dob"]
+    a.image_url  = params["the_image"]
+    a.save
 
-    redirect_to("http://localhost:3000/directors")
+    redirect_to("http://localhost:3000/actors")
   end
 
 
 # UPDATE controller
   def edit_form
-    @director = Director.find(params["id"])
+    @actor = Actor.find(params["id"])
   end
 
   def update_row
-    p = Director.find(params["id"])
-    p.name       = params["the_name"]
-    p.bio        = params["the_bio"]
-    p.dob        = params["the_dob"]
-    p.image_url  = params["the_image"]
-    p.save
+    a = Actor.find(params["id"])
+    a.name       = params["the_name"]
+    a.bio        = params["the_bio"]
+    a.dob        = params["the_dob"]
+    a.image_url  = params["the_image"]
+    a.save
 
-    redirect_to("http://localhost:3000/directors")
+    redirect_to("http://localhost:3000/actors")
   end
 
 
 # DELETE controller
 
   def destroy
-    @director = Director.find(params["id"])
-    @director.destroy
+    @actor = Actor.find(params["id"])
+    @actor.destroy
 
-    redirect_to("http://localhost:3000/directors")
+    redirect_to("http://localhost:3000/actors")
   end
 
 

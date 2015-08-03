@@ -15,9 +15,23 @@ Rails.application.routes.draw do
   get("/directors/:id/edit", { :controller => "directors", :action => "edit_form" })
   get("/update_director/:id", { :controller => "directors", :action => "update_row" })
 
-  # # Routes to READ ACTORS  photos
+#__________________________________________
+
+  # # Routes to CREATE ACTOR
+  get("/actors/new",    { :controller => "actors", :action => "new_form" })
+  get("/create_actor",  { :controller => "actors", :action => "create_row" })
+
+  # # Routes to READ ACTORS
   get("/actors",        { :controller => "actors", :action => "index" })
   get("/actors/:id",    { :controller => "actors",    :action => "show" })
+
+  # # Routes to DELETE ACTOR
+  get("/delete_actor/:id", { :controller => "actors", :action => "destroy" })
+
+  # # Routes to UPDATE DIRECTOR
+  get("/actors/:id/edit", { :controller => "actors", :action => "edit_form" })
+  get("/update_actor/:id", { :controller => "actors", :action => "update_row" })
+
 
 end
 
