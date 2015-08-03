@@ -1,22 +1,30 @@
 Rails.application.routes.draw do
 
-  get("/directors", { :controller => "directors", :action => "index" })
+  # # Routes to CREATE DIRECTOR
+  get("/directors/new", { :controller => "directors", :action => "new_form" })
+  get("/create_director", { :controller => "directors", :action => "create_row" })
+
+  # # Routes to READ DIRECTOR
+  get("/directors",        { :controller => "directors", :action => "index" })
+  get("/directors/:id",    { :controller => "directors",    :action => "show" })
+
+  # # Routes to DELETE DIRECTOR
+  get("/delete_director/:id", { :controller => "directors", :action => "destroy" })
+
+  # # Routes to UPDATE DIRECTOR
+  get("/directors/:id/edit", { :controller => "directors", :action => "edit_form" })
+  get("/update_director/:id", { :controller => "directors", :action => "update_row" })
+
+  # # Routes to READ ACTORS  photos
+  get("/actors",        { :controller => "actors", :action => "index" })
+  get("/actors/:id",    { :controller => "actors",    :action => "show" })
 
 end
 
 
-  # # Routes to Create
-  # get("/photos/new", { :controller => "photos", :action => "new_form" })
-  # get("/create_photo", { :controller => "photos", :action => "create_row" })
 
-  # # Routes to READ photos
-  # get("/photos",           { :controller => "photos", :action => "index" })
-  # get("/photos/:id",       { :controller => "photos", :action => "show" })
 
-  # # Routes to Delete
-  # get("/delete_photo/:id", { :controller => "photos", :action => "destroy" })
 
-  # # Routes to Edit
-  # get("/photos/:id/edit", { :controller => "photos", :action => "edit_form" })
-  # get("/update_photo/:id", { :controller => "photos", :action => "update_row" })
+
+
 

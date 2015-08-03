@@ -1,6 +1,11 @@
-class DirectorsController < ApplicationController
+class ActorsController < ApplicationController
   def index
-    @list_of_directors = Director.all
+    @list_of_actors = Actor.all
+  end
+
+# READ controller
+  def show
+    @actor = Actor.find(params["id"])
   end
 
 # CREATE controller
@@ -18,10 +23,6 @@ class DirectorsController < ApplicationController
     redirect_to("http://localhost:3000/directors")
   end
 
-# READ controller
-  def show
-    @director = Director.find(params["id"])
-  end
 
 # UPDATE controller
   def edit_form
